@@ -27,7 +27,7 @@ export default {
     const deleteTask = (taskId) => {
       const isConfirmed = confirm('Are you sure you want to delete this task?')
       if (isConfirmed) {
-        taskStore.deleteTask(taskId) // Call the delete function in your store
+        taskStore.deleteTask(taskId)
       }
     }
     return { taskStore, deleteTask }
