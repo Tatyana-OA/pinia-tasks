@@ -20,6 +20,7 @@
         <TaskDetails :task="task" />
       </div>
     </div>
+    <div class="new-task-form"><TaskForm /></div>
   </main>
 </template>
 
@@ -27,8 +28,9 @@
 import { ref } from 'vue'
 import { useTaskStore } from './stores/TaskStore'
 import TaskDetails from './components/TaskDetails.vue'
+import TaskForm from './components/TaskForm.vue'
 export default {
-  components: { TaskDetails },
+  components: { TaskDetails, TaskForm },
   setup() {
     const taskStore = useTaskStore()
     const filter = ref('all')

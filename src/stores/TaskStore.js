@@ -21,5 +21,17 @@ export const useTaskStore = defineStore('taskStore', {
     getAllCount: (state) => {
       return state.tasks.length
     }
+  },
+  actions: {
+    toggleFavorite(id) {
+      const task = this.tasks.find((t) => t.id === id)
+      task.isFav = !task.isFav
+    },
+    addTask(task) {
+      this.tasks.push(task)
+    },
+    deleteTask(id) {
+      return (this.tasks = this.tasks.filter((t) => t.id !== id))
+    }
   }
 })
