@@ -9,5 +9,17 @@ export const useTaskStore = defineStore('taskStore', {
       { id: 4, title: 'Complete a challenging puzzle', isFav: false },
       { id: 5, title: 'Plan a weekend getaway to a new place', isFav: true }
     ]
-  })
+  }),
+  getters: {
+    getFaveTasks() {
+      return this.tasks.filter((t) => t.isFav)
+    },
+    getFaveCount() {
+      return this.tasks.filter((t) => t.isFav).length
+    },
+    // Arrow functions with this
+    getAllCount: (state) => {
+      return state.tasks.length
+    }
+  }
 })
